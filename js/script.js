@@ -20,6 +20,16 @@ function clearTable() {
     }
 }
 
+function isTableFull() {
+    full = true;
+    for (let row = 0; row < table.length; row++) {
+        for (let col = 0; col < table[row].length; col++) {
+            if (table[row][col] == "") full = false;
+        }
+    }
+    return full;
+}
+
 function won(J) {
     var w = false;
     var chwin = "XXX";
@@ -66,15 +76,22 @@ function clicked(row, col) {
     function playAgain() {
         if (won(J)) {
             if (J == "X") {
-                XScore++;
-                Score = XScore;
+
+                Score = ++XScore;
             } else {
-                OScore++;
-                Score = OScore;
+
+                Score = ++OScore;
             }
-            alert('the player : "' + J + '" won the game');
+            alert('The player : "' + J + '" won the game');
             clearTable();
             document.getElementById(J + 'Score').innerText = Score;
+        } else {
+            if (isTableFull()) {
+                alert('Equal result');
+                clearTable();
+                document.getElementById(J + 'Score').innerText = Score;
+                document.getElementById(J + 'Score').innerText = Score;
+            }
         }
     }
 }
