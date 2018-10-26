@@ -1,6 +1,6 @@
 # you can find this game in this website :
 
-https://www.tictactoe.atspace.co.uk
+http://www.tictactoe.atspace.co.uk
 
 # Tic Tac Toe
 
